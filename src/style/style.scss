@@ -23,7 +23,6 @@ body {
 
 .status {
   position: absolute;
-  right: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,6 +36,24 @@ body {
   }
   &.off {
     background: $error;
+  }
+}
+
+.account-info {
+  position: absolute;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  span {
+    font-size: 14px;
+    > span {
+      font-size: 16px;
+      font-weight: 800;
+      color: $border;
+    }
+  }
+  button {
+    margin-top: 5px;
   }
 }
 

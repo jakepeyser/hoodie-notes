@@ -40,8 +40,8 @@ class Login extends Component {
         <input type="password" onChange={ evt => this.updateForm('password', evt.target.value) } placeholder="Password"/>
         { error && <span className="error">{ error }</span> }
         <div className="login-buttons">
-          <button type="submit" onClick={ () => this.login(true) }>Create Account</button>
-          <button type="submit" onClick={ () => this.login() }>Login</button>
+          <button onClick={ () => this.login(true) }>Create Account</button>
+          <button onClick={ () => this.login() }>Login</button>
         </div>
       </div>
     );
