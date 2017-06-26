@@ -1,0 +1,20 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 0;
+  input + input {
+    margin-top: 10px;
+  }
+  .error {
+    margin-top: 10px;
+  }
+  .login-buttons {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    button + button {
+      margin-left: 5px;
+    }
+  }
+}

@@ -1,7 +1,19 @@
+@import 'login';
+
+// Colors
+$primary: #e94e1b;
+$secondary: #f9c4b3;
+$border: #520644;
+$button: #282828;
+$button-hover: #b3b3b3;
+$text-light: #fefefe;
+$text-dark: #404040;
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  color: $text-dark;
 }
 
 .App {
@@ -13,12 +25,45 @@ body {
 }
 
 .header {
-  background-color: #e94e1b;
+  background-color: $primary;
   height: 160px;
   padding: 20px;
-  color: white;
+  color: $text-light;
 }
 
 .intro {
   font-size: large;
+}
+
+input {
+  width: 200px;
+  height: 25px;
+  padding: 2px 5px;
+  border: 1px solid $border;
+  border-radius: 2px;
+  outline: none;
+  font-size: 16px;
+}
+
+button {
+  height: 25px;
+  min-width: 100px;
+  padding: 4px 8px;
+  border: 2px solid $button;
+  border-radius: 2px;
+  outline: none;
+  background: $button;
+  font-weight: 600;
+  color: $text-light;
+  cursor: pointer;
+  transition: all .2s linear;
+  &:hover {
+    background: $button-hover;
+    color: $text-dark;
+  }
+}
+
+.error {
+  color: red;
+  font-size: 12px
 }

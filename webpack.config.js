@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars, no-fallthrough*/
 const webpack = require('webpack');
 
 // Init common paths used by config
