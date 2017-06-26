@@ -6,16 +6,21 @@ const hoodie = new Hoodie({
 
 // Initial state
 const defaultState = {
-  account: null
+  hoodie,
+  account: null,
+  status: true
 }
 
 /* -----------------    ACTIONS     ------------------ */
 
-export const CREATE_USER = 'CREATE_USER';
+const CREATE_USER = 'CREATE_USER'
+const CONNECTION_STATUS_UPDATE = 'CONNECTION_STATUS_UPDATE'
 
 /* ------------   ACTION CREATORS     ------------------ */
 
-export const authenticated = account => ({ type: CREATE_USER, account });
+const authenticated = account => ({ type: CREATE_USER, account })
+export const connectionChanged = status =>
+  ({ type: CONNECTION_STATUS_UPDATE, status })
 
 /* ------------       DISPATCHERS     ------------------ */
 
@@ -44,13 +49,11 @@ export const login = (username, password, cb) => dispatch => {
 /* --------------      REDUCER     ------------------ */
 
 export default function reducer(state = defaultState, action) {
-  console.log('state changed')
-  console.dir(state)
   switch (action.type) {
     case CREATE_USER:
-      const newState = Object.assign({}, state, { account: action.account })
-      console.log(newState)
-      return newState
+      return Object.assign({}, state, { account: action.account })
+    case CONNECTION_STATUS_UPDATE:
+      return Object.assign({}, state, { status: action.status })
     default:
       return state
   }
