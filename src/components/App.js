@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { checkUser, logout, connectionChanged } from '../store/redux'
+import { checkUser, logout } from '../store/reducers/user'
+import { connectionChanged } from '../store/reducers/connection'
 import Header from './Header'
 import Login from './Login'
 import Notes from './Notes'

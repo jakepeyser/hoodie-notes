@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-// import { addNote } from '../store/redux';
+// import { addNote } from '../store/reducers/user';
 
 class App extends Component {
   render() {
