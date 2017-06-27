@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux';
-import { checkUser, logout, connectionChanged } from '../store/redux';
+import { connect } from 'react-redux'
+import { checkUser, logout, connectionChanged } from '../store/redux'
+import Header from './Header'
 import Login from './Login'
 import Notes from './Notes'
-import logo from '../assets/logo.png'
 
 class App extends Component {
   // Check if user is logged in
@@ -23,19 +23,11 @@ class App extends Component {
     const { account, status, logout } = this.props
     return (
       <div className="App">
-        <div className="header">
-          <div className={`status ${status ? 'on' : 'off'}`}>
-            {status ? 'Connected' : 'Disconnected'}
-          </div>
-          { account &&
-            <div className="account-info">
-              <span> Logged in as <span>{ account.username }</span></span>
-              <button onClick={ logout }>Logout</button>
-            </div>
-          }
-          <img src={logo} className="logo" alt="logo" />
-          <h2>Hoodie Notes</h2>
-        </div>
+        <Header
+          online={ status }
+          username={ account && account.username }
+          handleLogout={ logout }
+        />
         { account ? <Notes /> : <Login /> }
       </div>
     );

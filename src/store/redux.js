@@ -5,6 +5,7 @@ const hoodie = new Hoodie({
 })
 window.store = hoodie.store
 window.account = hoodie.account
+window.hoodie = hoodie
 
 // Initial state
 const defaultState = {
