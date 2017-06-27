@@ -1,0 +1,46 @@
+.header {
+  background-color: $primary;
+  height: $nav-height;
+  padding: $nav-padding;
+  color: $text-light;
+}
+
+.status {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 25px;
+  padding: 2px 5px;
+  border: 2px solid $text-light;
+  font-size: 12px;
+  &.on {
+    background: $button;
+  }
+  &.off {
+    background: $error;
+  }
+}
+
+.account-info {
+  position: absolute;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  span {
+    font-size: 14px;
+    > span {
+      font-size: 16px;
+      font-weight: 800;
+      color: $border;
+    }
+  }
+  button {
+    margin-top: 5px;
+  }
+}
+
+.logo {
+  height: 100px;
+}

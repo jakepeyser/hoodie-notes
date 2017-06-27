@@ -1,14 +1,19 @@
-@import 'login';
-
 // Colors
 $primary: #e94e1b;
 $secondary: #f9c4b3;
 $border: #520644;
+$border-light: #c1a7bc;
 $button: #282828;
 $button-hover: #b3b3b3;
+$note-selected: #273183;
+$note-hover: #bfbcd8;
 $text-light: #fefefe;
 $text-dark: #404040;
 $error: #bd1a22;
+
+// Lengths
+$nav-height: 160px;
+$nav-padding: 20px;
 
 body {
   margin: 0;
@@ -19,57 +24,6 @@ body {
 
 .App {
   text-align: center;
-}
-
-.status {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 70px;
-  height: 25px;
-  padding: 2px 5px;
-  border: 2px solid $text-light;
-  font-size: 12px;
-  &.on {
-    background: $button;
-  }
-  &.off {
-    background: $error;
-  }
-}
-
-.account-info {
-  position: absolute;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  span {
-    font-size: 14px;
-    > span {
-      font-size: 16px;
-      font-weight: 800;
-      color: $border;
-    }
-  }
-  button {
-    margin-top: 5px;
-  }
-}
-
-.logo {
-  height: 100px;
-}
-
-.header {
-  background-color: $primary;
-  height: 160px;
-  padding: 20px;
-  color: $text-light;
-}
-
-.intro {
-  font-size: large;
 }
 
 input {
@@ -104,3 +58,7 @@ button {
   color: red;
   font-size: 12px
 }
+
+@import 'header';
+@import 'login';
+@import 'notes';
