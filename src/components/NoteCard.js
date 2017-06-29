@@ -1,6 +1,6 @@
 import React from 'react'
 import moment from 'moment'
-import TrashIcon from '../assets/trash.svg';
+import TrashIcon from '../assets/trash.svg'
 
 const NoteCard = ({ selected, title, date, selectNote, deleteNote }) =>
   <div className={`note-card ${selected ? 'selected' : ''}`} onClick={ selectNote }>
