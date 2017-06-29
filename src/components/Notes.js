@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { retrieveNotes } from '../store/reducers/notes';
+import { retrieveNotes, addNote, deleteNote } from '../store/reducers/notes';
 import NoteCard from './NoteCard'
 import Note from './Note'
 
@@ -20,8 +20,13 @@ class Notebook extends Component {
     this.setState({ selected })
   }
 
-  newNote() {
-    console.log('new note')
+  removeNote(evt, noteId) {
+    evt.stopPropagation()
+    this.props.deleteNote(noteId)
+
+    // De-select note if just removed
+    if (noteId === this.state.selected._id)
+      this.setState({ selected: null })
   }
 
   saveNote() {
@@ -29,12 +34,12 @@ class Notebook extends Component {
   }
 
   render() {
-    const { notes } = this.props
+    const { notes, addNote } = this.props
     const { selected } = this.state
     return (
       <div className="notebook">
         <div className="notes-list">
-          <button onClick={ this.newNote }>New Note</button>
+          <button onClick={ addNote }>New Note</button>
           <div className="notes">
           {notes.map(note =>
             <NoteCard key={ note._id }
@@ -42,6 +47,7 @@ class Notebook extends Component {
               title={ note.title }
               date={ note.hoodie.createdAt }
               selectNote={ () => this.viewNote(note) }
+              deleteNote={ evt => this.removeNote(evt, note._id) }
             />
           )}
           </div>
@@ -55,7 +61,9 @@ class Notebook extends Component {
 const mapStateToProps = ({ notes }) => ({ notes })
 
 const mapDispatchToProps = dispatch => ({
-  retrieveNotes: () => dispatch(retrieveNotes())
+  retrieveNotes: () => dispatch(retrieveNotes()),
+  addNote: () => dispatch(addNote()),
+  deleteNote: noteId => dispatch(deleteNote(noteId))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Notebook)

@@ -18,6 +18,10 @@
       border-top: 1px solid $border;
       overflow: scroll;
       .note-card {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
         border-top: 1px solid $border-light;
         padding: 10px 12px;
         text-align: left;
@@ -28,10 +32,16 @@
         }
         &:hover {
           background: $note-hover;
+          svg {
+            filter: invert(100%);
+          }
         }
         &.selected {
           background: $note-selected;
           color: $text-light;
+          svg {
+            filter: invert(100%);
+          }
         }
         h3 {
           margin: 0 0 2px 0;
@@ -43,6 +53,21 @@
         }
         span {
           font-size: 10px;
+        }
+        .note-card-trash {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+          transition: inherit;
+          svg {
+            transition: inherit;
+          }
+          &:hover {
+            background: $error;
+          }
         }
       }
     }
