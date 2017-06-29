@@ -1,23 +1,47 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
+import { checkUser, logout } from '../store/reducers/user'
+import { connectionChanged } from '../store/reducers/connection'
+import Header from './Header'
 import Login from './Login'
-import logo from '../assets/logo.png'
+import Notes from './Notes'
 
 class App extends Component {
+  // Check if user is logged in
+  componentWillMount() {
+    this.props.checkUser()
+  }
+
+  // Monitor connection status to the Hoodie store
+  componentDidMount() {
+    const { connectionStatus } = this.props.hoodie
+    connectionStatus.startChecking({interval: 3000})
+    connectionStatus.on('disconnect', () => { this.props.updateStatus(false) })
+    connectionStatus.on('reconnect', () => { this.props.updateStatus(true) })
+  }
+
   render() {
-    const { account } = this.props
+    const { account, status, logout } = this.props
     return (
       <div className="App">
-        <div className="header">
-          <img src={logo} className="logo" alt="logo" />
-          <h2>Hoodie Notes</h2>
-        </div>
-        { account ? null : <Login /> }
+        <Header
+          online={ status }
+          username={ account && account.username }
+          handleLogout={ logout }
+        />
+        { account ? <Notes /> : <Login /> }
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ account }) => ({ account })
+const mapStateToProps = ({ account, hoodie, status }) =>
+  ({ account, hoodie, status })
 
-export default connect(mapStateToProps)(App)
+const mapDispatchToProps = dispatch => ({
+  checkUser: () => dispatch(checkUser()),
+  logout: () => dispatch(logout()),
+  updateStatus: newStatus => dispatch(connectionChanged(newStatus))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

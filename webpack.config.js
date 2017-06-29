@@ -33,6 +33,13 @@ module.exports = {
       { // Transfer static files to build
         test: /\.(png)$/,
         loader: 'file-loader?name=images/[name].[ext]'
+      },
+      { // Inline SVGs where required in components
+        test: /\.svg$/,
+        use: [
+          'babel-loader',
+          'svg-react-loader'
+        ]
       }
     ]
   }

@@ -1,0 +1,131 @@
+.notebook {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - #{$nav-height} - (2 * #{$nav-padding}));
+  .notes-list {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 100%;
+    border-right: 2px solid $border;
+    button {
+      margin: 15px 20px;
+      height: 40px;
+    }
+    .notes {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid $border;
+      overflow: scroll;
+      .note-card {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid $border-light;
+        padding: 10px 12px;
+        text-align: left;
+        cursor: pointer;
+        transition: background .2s ease-out;
+        &:last-child {
+          border-bottom: 1px solid $border-light;
+        }
+        &:hover {
+          background: $note-hover;
+          svg {
+            filter: invert(100%);
+          }
+        }
+        &.selected {
+          background: $note-selected;
+          color: $text-light;
+          svg {
+            filter: invert(100%);
+          }
+        }
+        h3 {
+          margin: 0 0 2px 0;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-weight: 400;
+          font-size: 16px;
+        }
+        span {
+          font-size: 10px;
+        }
+        .note-card-trash {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+          transition: inherit;
+          svg {
+            transition: inherit;
+          }
+          &:hover {
+            background: $error;
+          }
+        }
+      }
+    }
+  }
+  .note-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    > p {
+      margin: 1em;
+      font-size: 18px;
+    }
+  }
+  .note {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .note-title {
+      display: flex;
+      flex-direction: row;
+      padding: 15px 20px;
+      height: 31px;
+      min-height: 31px;
+      border-bottom: 1px solid $border;
+      input {
+        flex-grow: 1;
+        height: 100%;
+        padding: 0;
+        border: none;
+        font-size: 20px;
+      }
+      button {
+        height: 100%
+      }
+    }
+    .note-panes {
+      display: flex;
+      flex-direction: row;
+      flex-grow: 1;
+      > * {
+        width: 50%;
+        padding: 10px;
+      }
+      .note-edit {
+        border-right: 2px solid $border;
+        textarea {
+          width: 100%;
+          height: 100%;
+          border: none;
+          outline: none;
+          resize: none;
+          font-size: 16px;
+        }
+      }
+      .note-view {
+        overflow: scroll;
+        text-align: left;
+      }
+    }
+  }
+}
