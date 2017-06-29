@@ -6,6 +6,7 @@ export default class Note extends Component {
   constructor(props) {
     super(props)
     this.state = this.getStateFromNote(this.props.note)
+    this.saveNote = this.saveNote.bind(this)
   }
 
   // Update note view when new note selected
@@ -32,7 +33,8 @@ export default class Note extends Component {
   }
 
   saveNote() {
-    console.log('saving note')
+    const { title, text } = this.state
+    this.props.handleSave(Object.assign({}, this.props.note, { title, text }))
   }
 
   render() {

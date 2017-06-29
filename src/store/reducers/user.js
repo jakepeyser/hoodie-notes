@@ -1,7 +1,7 @@
 /* -----------------    ACTIONS     ------------------ */
 
 const LOGIN = 'LOGIN'
-const LOGOUT = 'LOGOUT'
+export const LOGOUT = 'LOGOUT'
 
 /* ------------   ACTION CREATORS     ------------------ */
 
