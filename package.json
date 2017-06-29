@@ -1,9 +1,10 @@
 {
   "name": "hoodie-notes",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": false,
   "scripts": {
     "start": "hoodie",
+    "postinstall": "npm run build",
     "build": "webpack"
   },
   "dependencies": {
