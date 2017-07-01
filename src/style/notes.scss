@@ -5,7 +5,7 @@
   .notes-list {
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 250px;
     height: 100%;
     border-right: 2px solid $border;
     button {
@@ -43,23 +43,27 @@
             filter: invert(100%);
           }
         }
-        h3 {
-          margin: 0 0 2px 0;
-          white-space: nowrap;
+        .note-card-text {
           overflow: hidden;
-          text-overflow: ellipsis;
-          font-weight: 400;
-          font-size: 16px;
-        }
-        span {
-          font-size: 10px;
+          h3 {
+            margin: 0 0 2px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: 400;
+            font-size: 16px;
+          }
+          span {
+            font-size: 10px;
+          }
         }
         .note-card-trash {
           display: flex;
           justify-content: center;
           align-items: center;
-          width: 28px;
+          min-width: 28px;
           height: 28px;
+          margin-left: 5px;
           border-radius: 50%;
           transition: inherit;
           svg {
