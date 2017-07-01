@@ -1,7 +1,26 @@
 {
   "name": "hoodie-notes",
   "version": "1.0.0",
+  "description": "A simple Markdown notebook built with React and Hoodie",
+  "license": "MIT",
   "private": false,
+  "main": "src/index.js",
+  "homepage": "https://hoodie-notes.herokuapp.com/",
+  "author": "Jake Peyser (https://github.com/JakePeyser)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jakepeyser/hoodie-notes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jakepeyser/hoodie-notes/issues"
+  },
+  "keywords":[
+    "react",
+    "redux",
+    "hoodie",
+    "markdown",
+    "notes"
+  ],
   "scripts": {
     "start": "hoodie",
     "build": "webpack"
