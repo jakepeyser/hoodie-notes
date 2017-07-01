@@ -4,7 +4,6 @@
   "private": false,
   "scripts": {
     "start": "hoodie",
-    "postinstall": "npm run build",
     "build": "webpack"
   },
   "dependencies": {

@@ -1,5 +1,7 @@
 # hoodie-notes
 
+![Build Status](https://travis-ci.org/jakepeyser/hoodie-notes.png)
+
 A simple Markdown notebook application built using [React.js](https://facebook.github.io/react/) for the view layer and [Hoodie](http://hood.ie/) as the backend as a service (BaaS). The app was created as a demonstration of several patterns for using a BaaS tool like Hoodie.
 
 ## Running the app
@@ -13,11 +15,12 @@ A simple Markdown notebook application built using [React.js](https://facebook.g
 git clone git@github.com:jakepeyser/hoodie-notes.git
 cd hoodie-notes
 npm install
+npm run build
 ```
 
 This will copy the project to your local machine and install all runtime and build dependencies.
 
-After the dependencies are installed, the build is run and front end code is bundled into the `/public` folder.
+After the dependencies are installed, transpile and bundle the front end code into the `/public` folder with webpack.
 
 ### Running the app
 
