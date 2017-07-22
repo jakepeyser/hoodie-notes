@@ -49,7 +49,9 @@ class Notebook extends Component {
     return (
       <div className="notebook">
         <div className="notes-list">
-          <button onClick={ addNote }>New Note</button>
+          <div className="add-note">
+            <button onClick={ addNote }>New Note</button>
+          </div>
           <div className="notes">
           {notes.map(note =>
             <NoteCard key={ note._id }
