@@ -7,15 +7,16 @@ A simple Markdown notebook application built using [React.js](https://facebook.g
 ## Running the app
 
 ### Prerequisites
-- [Node.js and npm](https://nodejs.org/en/)
+- [Node.js](https://nodejs.org/en/)
+- [yarn](https://yarnpkg.com/en/)
 
 ### Install and Build
 
 ```sh
 git clone git@github.com:jakepeyser/hoodie-notes.git
 cd hoodie-notes
-npm install
-npm run build
+yarn
+yarn build
 ```
 
 This will copy the project to your local machine and install all runtime and build dependencies.
@@ -25,7 +26,7 @@ After the dependencies are installed, transpile and bundle the front end code in
 ### Running the app
 
 ```sh
-$ npm start
+$ yarn start
 > hoodie-notes@1.0.0 start /hoodie-notes
 > hoodie
 

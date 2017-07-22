@@ -12,7 +12,7 @@
   "bugs": {
     "url": "https://github.com/jakepeyser/hoodie-notes/issues"
   },
-  "keywords":[
+  "keywords": [
     "react",
     "redux",
     "hoodie",
@@ -27,7 +27,7 @@
     "@hoodie/client": "^10.1.0",
     "hoodie": "^28.2.0",
     "moment": "^2.18.1",
-    "pouchdb-browser": "^6.2.0",
+    "pouchdb-browser": "^6.3.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",

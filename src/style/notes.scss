@@ -1,3 +1,11 @@
+.notebook-header {
+  padding: 12px 20px;
+  height: 60px;
+  min-height: 60px;
+  box-sizing: border-box;
+  border-bottom: 2px solid $border;
+}
+
 .notebook {
   display: flex;
   flex-direction: row;
@@ -5,17 +13,17 @@
   .notes-list {
     display: flex;
     flex-direction: column;
-    width: 250px;
+    min-width: 250px;
     height: 100%;
     border-right: 2px solid $border;
+    .add-note {
+      @extend .notebook-header;
+    }
     button {
-      margin: 15px 20px;
-      height: 40px;
+      height: 100%;
+      width: 100%;
     }
     .notes {
-      display: flex;
-      flex-direction: column;
-      border-top: 1px solid $border;
       overflow: scroll;
       .note-card {
         display: flex;
@@ -92,10 +100,7 @@
     .note-title {
       display: flex;
       flex-direction: row;
-      padding: 15px 20px;
-      height: 31px;
-      min-height: 31px;
-      border-bottom: 1px solid $border;
+      @extend .notebook-header;
       input {
         flex-grow: 1;
         height: 100%;

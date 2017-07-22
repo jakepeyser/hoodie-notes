@@ -2092,6 +2092,12 @@ debug@2.6.1, debug@^2.1.1, debug@^2.2.0:
   dependencies:
     ms "0.7.2"
 
+debug@2.6.4:
+  version "2.6.4"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.4.tgz#7586a9b3c39741c0282ae33445c4e8ac74734fe0"
+  dependencies:
+    ms "0.7.3"
+
 debug@2.6.7, debug@^2.1.0, debug@^2.1.3:
   version "2.6.7"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.7.tgz#92bad1f6d05bbb6bba22cca88bcd0ec894c2861e"
@@ -4163,6 +4169,10 @@ ms@0.7.2:
   version "0.7.2"
   resolved "https://registry.yarnpkg.com/ms/-/ms-0.7.2.tgz#ae25cf2512b3885a1d95d7f037868d8431124765"
 
+ms@0.7.3:
+  version "0.7.3"
+  resolved "https://registry.yarnpkg.com/ms/-/ms-0.7.3.tgz#708155a5e44e33f5fd0fc53e81d0d40a91be1fff"
+
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
@@ -5058,7 +5068,7 @@ pouchdb-binary-utils@6.2.0:
   dependencies:
     buffer-from "0.1.1"
 
-pouchdb-browser@^6.0.7, pouchdb-browser@^6.2.0:
+pouchdb-browser@^6.0.7:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/pouchdb-browser/-/pouchdb-browser-6.2.0.tgz#52eac563aac0490e0e254400028a675ae3125a55"
   dependencies:
@@ -5068,6 +5078,19 @@ pouchdb-browser@^6.0.7, pouchdb-browser@^6.2.0:
     inherits "2.0.3"
     lie "3.1.1"
     spark-md5 "3.0.0"
+    vuvuzela "1.0.3"
+
+pouchdb-browser@^6.3.4:
+  version "6.3.4"
+  resolved "https://registry.yarnpkg.com/pouchdb-browser/-/pouchdb-browser-6.3.4.tgz#f3d40494d159931b7f96fb9afda8911c47cb9faf"
+  dependencies:
+    argsarray "0.0.1"
+    debug "2.6.4"
+    immediate "3.0.6"
+    inherits "2.0.3"
+    lie "3.1.1"
+    spark-md5 "3.0.0"
+    uuid "^3.1.0"
     vuvuzela "1.0.3"
 
 pouchdb-bulkdocs-wrapper@^1.0.0, pouchdb-bulkdocs-wrapper@^1.0.2:
@@ -6797,7 +6820,7 @@ utils-merge@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.0.tgz#0294fb922bb9375153541c4f7096231f287c8af8"
 
-uuid@^3.0.0, uuid@^3.0.1:
+uuid@^3.0.0, uuid@^3.0.1, uuid@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.1.0.tgz#3dd3d3e790abc24d7b0d3a034ffababe28ebbc04"
 
