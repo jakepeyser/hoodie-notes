@@ -6,7 +6,7 @@ import status from './connection'
 import Hoodie from '@hoodie/client'
 const hoodieInstance = new Hoodie({
   url: window.location.origin,
-  PouchDB: require('pouchdb-browser')
+  PouchDB: require('pouchdb-browser').default
 })
 const hoodie = () => hoodieInstance
 
